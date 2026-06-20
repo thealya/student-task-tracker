@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:/Users/Microsoft/.claude/projects/c--Users-Microsoft-OneDrive-Desktop-Alya-s-App-/memory/\")",
+      "Bash(ls -la)",
+      "Bash(cat MEMORY.md)"
+    ]
+  }
+}

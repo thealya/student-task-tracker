@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Task Tracker</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Student Task Tracker</h1>
+        <p class="subtitle">Keep track of what's due.</p>
+      </header>
+
+      <!-- Dashboard summary (filled by the Edge Function in Step 5) -->
+      <section id="dashboard" class="dashboard" hidden></section>
+
+      <!-- Add-task form -->
+      <form id="task-form" class="task-form">
+        <input id="title" type="text" placeholder="Task title" required />
+        <input id="description" type="text" placeholder="Description (optional)" />
+        <div class="form-row">
+          <label>
+            Due date
+            <input id="due_date" type="date" />
+          </label>
+          <label>
+            Priority
+            <select id="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary">Add task</button>
+        </div>
+      </form>
+
+      <!-- Status filters -->
+      <div id="filters" class="filters">
+        <button class="filter is-active" data-filter="all">All</button>
+        <button class="filter" data-filter="todo">To do</button>
+        <button class="filter" data-filter="in_progress">In progress</button>
+        <button class="filter" data-filter="done">Done</button>
+      </div>
+
+      <!-- Task list -->
+      <div id="task-list" class="task-list"></div>
+      <p id="empty-state" class="empty-state" hidden>No tasks yet. Add one above.</p>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
